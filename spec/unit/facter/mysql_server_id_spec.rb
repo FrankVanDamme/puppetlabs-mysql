@@ -1,11 +1,11 @@
-require "spec_helper"
+require 'spec_helper'
 
-describe Facter::Util::Fact do
-  before {
+describe Facter::Util::Fact.to_s do
+  before(:each) do
     Facter.clear
-  }
+  end
 
-  describe "mysql_server_id" do
+  describe 'mysql_server_id' do
     context "igalic's laptop" do
       before :each do
         Facter.fact(:macaddress).stubs(:value).returns('3c:97:0e:69:fb:e1')
@@ -15,12 +15,21 @@ describe Facter::Util::Fact do
       end
     end
 
-    context "node with lo only" do
+    context 'node with lo only' do
       before :each do
         Facter.fact(:macaddress).stubs(:value).returns('00:00:00:00:00:00')
       end
       it do
         Facter.fact(:mysql_server_id).value.to_s.should == '0'
+      end
+    end
+
+    context 'test nil case' do
+      before :each do
+        Facter.fact(:macaddress).stubs(:value).returns(nil)
+      end
+      it do
+        Facter.fact(:mysql_server_id).value.to_s.should == ''
       end
     end
   end

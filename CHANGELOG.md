@@ -1,3 +1,192 @@
+# Change log
+
+All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org).
+
+## [8.0.0](https://github.com/puppetlabs/puppetlabs-mysql/tree/8.0.0) (2019-01-18)
+
+[Full Changelog](https://github.com/puppetlabs/puppetlabs-mysql/compare/7.0.0...8.0.0)
+
+### Changed
+
+- \(MODULES-8193\) - Removal of inbuilt deepmerge and dirname functions [\#1145](https://github.com/puppetlabs/puppetlabs-mysql/pull/1145) ([david22swan](https://github.com/david22swan))
+
+### Added
+
+- \(MODULES-3539\) Allow @ in username [\#1155](https://github.com/puppetlabs/puppetlabs-mysql/pull/1155) ([Fogelholk](https://github.com/Fogelholk))
+- \(MODULES-8144\) - Add support for SLES 15 [\#1146](https://github.com/puppetlabs/puppetlabs-mysql/pull/1146) ([eimlav](https://github.com/eimlav))
+- Added support for RHSCL mysql versions and support for .mylogin.cnf for MySQL 5.6.6+ [\#1061](https://github.com/puppetlabs/puppetlabs-mysql/pull/1061) ([DJMuggs](https://github.com/DJMuggs))
+
+### Fixed
+
+- \(MODULES-8193\) - Wrapper methods created for inbuilt 4.x functions [\#1151](https://github.com/puppetlabs/puppetlabs-mysql/pull/1151) ([david22swan](https://github.com/david22swan))
+- pdksync - \(FM-7655\) Fix rubygems-update for ruby \< 2.3 [\#1150](https://github.com/puppetlabs/puppetlabs-mysql/pull/1150) ([tphoney](https://github.com/tphoney))
+- Add includedir for Gentoo [\#1147](https://github.com/puppetlabs/puppetlabs-mysql/pull/1147) ([baurmatt](https://github.com/baurmatt))
+- add mysql\_native\_password for mariadb 10.2 in password\_hash [\#1117](https://github.com/puppetlabs/puppetlabs-mysql/pull/1117) ([mlk-89](https://github.com/mlk-89))
+- Removing query\_cache ops that are no longer supported in MySQL \>= 8.0 [\#1107](https://github.com/puppetlabs/puppetlabs-mysql/pull/1107) ([ernstae](https://github.com/ernstae))
+
+## [7.0.0](https://github.com/puppetlabs/puppetlabs-mysql/tree/7.0.0) (2018-10-25)
+
+[Full Changelog](https://github.com/puppetlabs/puppetlabs-mysql/compare/6.2.0...7.0.0)
+
+### Changed
+
+- \(MODULES-6923\) remove staging module [\#1115](https://github.com/puppetlabs/puppetlabs-mysql/pull/1115) ([tphoney](https://github.com/tphoney))
+
+### Added
+
+- \(MODULES-7857\) Support user creation on galera [\#1130](https://github.com/puppetlabs/puppetlabs-mysql/pull/1130) ([MaxFedotov](https://github.com/MaxFedotov))
+- MySQL 8 compatibility in user management [\#1092](https://github.com/puppetlabs/puppetlabs-mysql/pull/1092) ([zpetr](https://github.com/zpetr))
+
+### Fixed
+
+- \(MODULES-7487\) Check authentication string for user password on MariaDB 10.2.16+ [\#1135](https://github.com/puppetlabs/puppetlabs-mysql/pull/1135) ([gguillotte](https://github.com/gguillotte))
+
+## [6.2.0](https://github.com/puppetlabs/puppetlabs-mysql/tree/6.2.0) (2018-09-27)
+
+[Full Changelog](https://github.com/puppetlabs/puppetlabs-mysql/compare/6.1.0...6.2.0)
+
+### Added
+
+- pdksync - \(MODULES-6805\) metadata.json shows support for puppet 6 [\#1127](https://github.com/puppetlabs/puppetlabs-mysql/pull/1127) ([tphoney](https://github.com/tphoney))
+
+### Fixed
+
+- \(maint\) - Change versioning comparison [\#1123](https://github.com/puppetlabs/puppetlabs-mysql/pull/1123) ([eimlav](https://github.com/eimlav))
+
+## [6.1.0](https://github.com/puppetlabs/puppetlabs-mysql/tree/6.1.0) (2018-09-13)
+
+[Full Changelog](https://github.com/puppetlabs/puppetlabs-mysql/compare/6.0.0...6.1.0)
+
+### Fixed
+
+- pdksync - \(MODULES-7705\) - Bumping stdlib dependency from \< 5.0.0 to \< 6.0.0 [\#1114](https://github.com/puppetlabs/puppetlabs-mysql/pull/1114) ([pmcmaw](https://github.com/pmcmaw))
+- \(MODULES-6981\) Do not try to read ~root/.my.cnf when calling "mysqld -V" [\#1063](https://github.com/puppetlabs/puppetlabs-mysql/pull/1063) ([simondeziel](https://github.com/simondeziel))
+
+## [6.0.0](https://github.com/puppetlabs/puppetlabs-mysql/tree/6.0.0) (2018-08-01)
+
+[Full Changelog](https://github.com/puppetlabs/puppetlabs-mysql/compare/5.4.0...6.0.0)
+
+### Changed
+
+- \[FM-6962\] Removal of unsupported OS from mysql [\#1086](https://github.com/puppetlabs/puppetlabs-mysql/pull/1086) ([david22swan](https://github.com/david22swan))
+
+### Added
+
+- \(FM-5985\) - Addition of support for Ubuntu 18.04 to mysql [\#1104](https://github.com/puppetlabs/puppetlabs-mysql/pull/1104) ([david22swan](https://github.com/david22swan))
+- \(MODULES-7439\) - Implementing beaker-testmode\_switcher [\#1095](https://github.com/puppetlabs/puppetlabs-mysql/pull/1095) ([pmcmaw](https://github.com/pmcmaw))
+- Support for optional\_\_args and prescript to mysqldump backup provider [\#1083](https://github.com/puppetlabs/puppetlabs-mysql/pull/1083) ([eputnam](https://github.com/eputnam))
+- Allow empty user passwords [\#1075](https://github.com/puppetlabs/puppetlabs-mysql/pull/1075) ([disappear89](https://github.com/disappear89))
+- Add user tls\_options and grant options to mysql::db [\#1065](https://github.com/puppetlabs/puppetlabs-mysql/pull/1065) ([edestecd](https://github.com/edestecd))
+- Use puppet4 functions-api [\#1044](https://github.com/puppetlabs/puppetlabs-mysql/pull/1044) ([juliantodt](https://github.com/juliantodt))
+- Replaced 'DROP USER' with 'DROP USER IF EXISTS' [\#942](https://github.com/puppetlabs/puppetlabs-mysql/pull/942) ([libertamohamed](https://github.com/libertamohamed))
+
+### Fixed
+
+- \(MODULES-7353\) Enable service for Debian 9  [\#1094](https://github.com/puppetlabs/puppetlabs-mysql/pull/1094) ([david22swan](https://github.com/david22swan))
+- Update locales test for Debian 9 [\#1091](https://github.com/puppetlabs/puppetlabs-mysql/pull/1091) ([HelenCampbell](https://github.com/HelenCampbell))
+- \[FM-7045\] Fix to allow Debian 9 test's to run clean [\#1088](https://github.com/puppetlabs/puppetlabs-mysql/pull/1088) ([david22swan](https://github.com/david22swan))
+- \(MODULES-7198\) Fix DROP USER IF EXISTS on mariadb [\#1082](https://github.com/puppetlabs/puppetlabs-mysql/pull/1082) ([hunner](https://github.com/hunner))
+
+## 5.4.0
+
+### Added
+
+- \(PDOC-210\) Puppet Strings documentation [\#1068](https://github.com/puppetlabs/puppetlabs-mysql/pull/1068) ([hunner](https://github.com/hunner))
+- Compatibility for Alpine linux [\#1049](https://github.com/puppetlabs/puppetlabs-mysql/pull/1049) ([cisco87](https://github.com/cisco87))
+
+### Fixed
+
+- \(MODULES-6627\) Removed unused --host flag from mysqlcaller [\#1064](https://github.com/puppetlabs/puppetlabs-mysql/pull/1064) ([HelenCampbell](https://github.com/HelenCampbell))
+- Fixed archlinux compatibility [\#1057](https://github.com/puppetlabs/puppetlabs-mysql/pull/1057) ([bastelfreak](https://github.com/bastelfreak))
+- Changed input param option in export.json from sql to file [\#1054](https://github.com/puppetlabs/puppetlabs-mysql/pull/1054) ([cgoswami](https://github.com/cgoswami))
+
+## Supported Release [5.3.0]
+### Summary
+This release uses the PDK convert functionality which in return makes the module PDK compliant. It also includes a roll up of maintenance changes, a new task and support for `GRANTS FUNCTION`.
+
+### Added
+- Add support for `GRANTS FUNCTION` ([MODULES-2075](https://tickets.puppet.com/browse/MODULES-2075)).
+- Add Export database task.
+- PDK Convert mysql ([MODULES-6454](https://tickets.puppet.com/browse/MODULES-6454)).
+
+### Changed
+- Allow authentication plugin to be changed.
+- Update mysql_user provider.
+- Plugins don't exist before 5.5; password field name changed
+- Fix helpful rubocops and disable hurtful cops.
+- Addressing puppet-lint and rubocop errors
+- Remove update bundler and add ignore .DS_Store
+- Skip rubocop warning in task.
+- Fix a typo in a classname in the changelog.
+
+## Supported Release [5.2.1]
+### Summary
+This release fixes CVE-2018-6508 which is a potential arbitrary code execution via tasks.
+
+### Fixed
+- Fix export and mysql tasks for arbitrary remote code
+
+## Supported Release [5.2.0]
+
+### Added
+- Compatibility for puppet-staging 3.0.0
+
+### Fixed
+- Centralize all mysql command calls for providers
+- Add paths to `mysql_datadir` provider for RedHat Software Collections
+
+## Supported Release [5.1.0]
+### Summary
+This release adds Tasks to the Mysql module.
+
+#### Added
+- Adds the execute sql task.
+
+## Supported Release [5.0.0]
+### Summary
+This is a major release that adds support for string translation. Currently the only supported language besides
+English is Japanese.
+
+#### Added
+- Several gem dependencies required for translation.
+- Wrapping of strings that require translation. Strings in ruby code are now wrapped with `_()` and strings in puppet code with `translate()`.
+- Debian 9 support
+
+#### Changed
+- The default php_package_name for Debian and Ubuntu to `php-mysql`
+
+## Supported Release 4.0.1
+### Summary
+This is a small bugfix release that makes `mysql_install_db` optional and fixes some regular expression issues.
+
+#### Bugfixes
+- ([MODULES-5528](https://tickets.puppet.com/browse/MODULES-5528)) Fixes the `mysql_install_db` command so that it is optional
+- ([MODULES-5602](https://tickets.puppet.com/browse/MODULES-5602)) Removes superfluous backslashes in some regular expressions that were causing instability
+
+## Supported Release 4.0.0
+### Summary
+This release sees the enablement of rubocop, also an update to the lib directory with rubocop fixes and several other changes and fixes. Also a bump to the Puppet version compatibility and several Puppet language updates.
+
+#### Added
+- Updated README.md with example how to install MySQL Community Server 5.6 on Centos 7.3
+- Enabled Rubocop and addition of Rubocop fixes for /lib directory.
+
+#### Removed
+- Dropped legacy tests for db.pp.
+
+#### Changed
+- Replaced validate function calls with datatypes in db.pp.
+- Bumped recommended puppet version to between 4.7.0 and 6.0.0.
+- Conditionalize name validation in mysql_grant type. ([MODULES-4604](https://tickets.puppet.com/browse/MODULES-4604))
+
+#### Fixed
+- Removal of invalid parameter provider on Mysql_user[user@localhost] in mysql::db ([MODULES-4115](https://tickets.puppet.com/browse/MODULES-4115))
+- Fixed server_service_name for Debian/stretch.
+- Spec fixes for Puppet 5.
+- Test update for fix:create procedure, then grant ([MODULES-5390](https://tickets.puppet.com/browse/MODULES-5390))
+- Fixing empty user/password issue for xtrabackup. Now defaults as undef instead of ''.
+- Remove unsupported Ubuntu versions ([MODULES-5501](https://tickets.puppet.com/browse/MODULES-5501))
+
 ## Supported Release 3.11.0
 ### Summary
 This release includes README and metadata translations to Japanese, as well as some enhancements and bugfixes.
@@ -24,7 +213,7 @@ This release includes new features for setting TLS options on a mysql user, a ne
 - Adds support for setting `tls_options` in `mysql_user`
 
 #### Bugfixes
-- (MODULES-3557) Adds Ubuntu 16.04 package names for language bindings 
+- (MODULES-3557) Adds Ubuntu 16.04 package names for language bindings
 - (MODULES-3907) Adds MySQL/Percona 5.7 initialize on fresh deploy
 
 ## Supported Release 3.9.0
@@ -368,7 +557,7 @@ Also fixes a bunch of tests on various platforms.
 - key_buffer renamed to key_buffer_size.
 - log_error renamed to log-error.
 - pid_file renamed to pid-file.
-- Ensure mysql::server:root_password runs before mysql::server::backup
+- Ensure mysql::server::root_password runs before mysql::server::backup
 - Fix options_override -> override_options in the README.
 - Extensively rewrite the README to be accurate and awesome.
 - Move to requiring stdlib 3.2.0, shipped in PE3.0
@@ -785,3 +974,13 @@ configuration variables.
 
 ## 2011-06-03 - Dan Bode <dan@puppetlabs.com> - 0.0.1
 * initial commit
+
+[5.4.0]:https://github.com/puppetlabs/puppetlabs-mysql/compare/5.3.0...5.4.0
+[5.3.0]:https://github.com/puppetlabs/puppetlabs-mysql/compare/5.2.1...5.3.0
+[5.2.1]:https://github.com/puppetlabs/puppetlabs-mysql/compare/5.2.0...5.2.1
+[5.2.0]:https://github.com/puppetlabs/puppetlabs-mysql/compare/5.1.0...5.2.0
+[5.1.0]:https://github.com/puppetlabs/puppetlabs-mysql/compare/5.0.0...5.1.0
+[5.0.0]:https://github.com/puppetlabs/puppetlabs-mysql/compare/4.0.1...5.0.0
+
+
+\* *This Changelog was automatically generated by [github_changelog_generator](https://github.com/skywinder/Github-Changelog-Generator)*
