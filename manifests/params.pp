@@ -49,12 +49,18 @@ class mysql::params {
           } else {
             $provider = 'mysql'
           }
+          $python_package_name = 'MySQL-python'
         }
         /^(RedHat|CentOS|Scientific|OracleLinux)$/: {
           if versioncmp($::operatingsystemmajrelease, '7') >= 0 {
             $provider = 'mariadb'
           } else {
             $provider = 'mysql'
+          }
+          if versioncmp($::operatingsystemmajrelease, '8') >= 0 {
+            $python_package_name = 'python3-PyMySQL'
+          } else {
+            $python_package_name = 'MySQL-python'
           }
         }
         default: {
@@ -96,7 +102,6 @@ class mysql::params {
       $java_package_name       = 'mysql-connector-java'
       $perl_package_name       = 'perl-DBD-MySQL'
       $php_package_name        = 'php-mysql'
-      $python_package_name     = 'MySQL-python'
       $ruby_package_name       = 'ruby-mysql'
       $client_dev_package_name = undef
     }
@@ -180,7 +185,6 @@ class mysql::params {
       } else {
         $provider = 'mysql'
       }
-
       if $provider == 'mariadb' {
         $client_package_name     = 'mariadb-client'
         $server_package_name     = 'mariadb-server'
@@ -217,12 +221,13 @@ class mysql::params {
       } else {
         $php_package_name = 'php5-mysql'
       }
+
       $python_package_name = 'python-mysqldb'
-      $ruby_package_name   = $::lsbdistcodename ? {
-        'jessie'           => 'ruby-mysql',
-        'stretch'          => 'ruby-mysql2',
-        'trusty'           => 'ruby-mysql',
-        'xenial'           => 'ruby-mysql',
+      $ruby_package_name   = $::operatingsystemrelease ? {
+        '8'                => 'ruby-mysql',
+        '9'                => 'ruby-mysql2',
+        '14'               => 'ruby-mysql',
+        '16'               => 'ruby-mysql',
         default            => 'libmysql-ruby',
       }
     }
